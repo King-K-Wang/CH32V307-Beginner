@@ -1,0 +1,17 @@
+*.dblite
+*.bin
+*.dcf
+*.map
+*.lst
+*.pyc
+*.elf
+*.old
+*.o
+
+build
+dist
+packages
+Debug
+
+# there is some .o without source code in applications/ , so we have to track them
+!applications/*
