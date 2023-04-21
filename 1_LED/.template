@@ -1,7 +1,7 @@
 Mcu Type=CH32V30x
 Target Path=obj\1_LED.hex
 Address=0x08000000
-Erase All=true
+Erase All=false
 Program=true
 Verify=true
 Reset=true
@@ -15,3 +15,4 @@ Description=Website: http://www.wch.cn/products/CH32V307.html?\nROM(byte): 288K,
 
 PeripheralVersion=2.0
 MCU=CH32V307VCT6
+CLKSpeed=1

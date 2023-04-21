@@ -26,7 +26,14 @@
 /* Global define */
 
 /* Global Variable */
-
+/*********************************************************************
+ * @function    GPIO_Toggle_INIT
+ *
+ * @brief       Init LED0 & LED1
+ *
+ * @return      none
+ */
+void USER_GPIO_Init(void);
 
 /*********************************************************************
  * @fn      main
@@ -43,11 +50,28 @@ int main(void)
 	USART_Printf_Init(115200);	
 	printf("SystemClk:%d\r\n",SystemCoreClock);
 	printf( "ChipID:%08x\r\n", DBGMCU_GetCHIPID() );
-	printf("This is printf example\r\n");
+	printf("This is LED example\r\n");
+
+	USER_GPIO_Init();
 
 	while(1)
     {
-
+	    GPIO_WriteBit(GPIOE, GPIO_Pin_11, !(GPIO_ReadOutputDataBit(GPIOE, GPIO_Pin_11)));
+	    Delay_Ms(500);
+	    GPIO_WriteBit(GPIOE, GPIO_Pin_12, !(GPIO_ReadOutputDataBit(GPIOE, GPIO_Pin_12)));
+	    Delay_Ms(500);
 	}
+}
+
+void USER_GPIO_Init(void)
+{
+    GPIO_InitTypeDef GPIO_InitStruct;
+
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOE, ENABLE);
+    GPIO_InitStruct.GPIO_Pin = GPIO_Pin_11 | GPIO_Pin_12;
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+
+    GPIO_Init(GPIOE, &GPIO_InitStruct);
 }
 
