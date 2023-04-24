@@ -27,7 +27,7 @@
 
 /* Global Variable */
 /*********************************************************************
- * @function    GPIO_Toggle_INIT
+ * @function    USER_GPIO_Init
  *
  * @brief       Init LED0 & LED1
  *

@@ -13,24 +13,26 @@
 
 void NMI_Handler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
 void HardFault_Handler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
+void EXTI4_IRQHandler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
+void EXTI9_5_IRQHandler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
 
 /*********************************************************************
- * @fn      NMI_Handler
+ * @function    NMI_Handler
  *
- * @brief   This function handles NMI exception.
+ * @brief       This function handles NMI exception.
  *
- * @return  none
+ * @return      none
  */
 void NMI_Handler(void)
 {
 }
 
 /*********************************************************************
- * @fn      HardFault_Handler
+ * @funciton    HardFault_Handler
  *
- * @brief   This function handles Hard Fault exception.
+ * @brief       This function handles Hard Fault exception.
  *
- * @return  none
+ * @return      none
  */
 void HardFault_Handler(void)
 {
@@ -39,4 +41,34 @@ void HardFault_Handler(void)
   }
 }
 
+/*********************************************************************
+ * @funciton    EXTI4_IRQHandler
+ *
+ * @brief       This function handles EXTI4 exception.
+ *
+ * @return      none
+ */
+void EXTI4_IRQHandler(void)
+{
+    if(EXTI_GetITStatus(EXTI_Line4) != RESET)
+    {
+        EXTI_ClearFlag(EXTI_Line4);
+        GPIO_WriteBit(GPIOE, GPIO_Pin_11, !GPIO_ReadOutputDataBit(GPIOE, GPIO_Pin_11));
+    }
+}
 
+/*********************************************************************
+ * @funciton    EXTI5_IRQHandler
+ *
+ * @brief       This function handles EXTI5 exception.
+ *
+ * @return      none
+ */
+void EXTI9_5_IRQHandler(void)
+{
+    if(EXTI_GetITStatus(EXTI_Line5) != RESET)
+    {
+        EXTI_ClearFlag(EXTI_Line5);
+        GPIO_WriteBit(GPIOE, GPIO_Pin_12, !GPIO_ReadOutputDataBit(GPIOE, GPIO_Pin_12));
+    }
+}
