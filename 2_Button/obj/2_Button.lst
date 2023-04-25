@@ -3816,7 +3816,7 @@ Disassembly of section .text:
     1f3c:	6920                	flw	fs0,80(a0)
     1f3e:	75622073          	csrs	0x756,tp
     1f42:	7474                	flw	fa3,108(s0)
-    1f44:	65206d6f          	jal	s10,8596 <_data_lma+0x65aa>
+    1f44:	65206e6f          	jal	t3,8596 <_data_lma+0x65aa>
     1f48:	6178                	flw	fa4,68(a0)
     1f4a:	706d                	c.lui	zero,0xffffb
     1f4c:	656c                	flw	fa1,76(a0)

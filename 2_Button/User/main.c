@@ -60,7 +60,7 @@ int main(void)
     USART_Printf_Init(115200);
     printf("SystemClk:%d\r\n",SystemCoreClock);
     printf( "ChipID:%08x\r\n", DBGMCU_GetCHIPID() );
-    printf("This is buttom example\r\n");
+    printf("This is button example\r\n");
 
     USER_EXTI_INIT();
     USER_GPIO_Init();
