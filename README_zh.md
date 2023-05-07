@@ -141,10 +141,10 @@
 - 软件环境搭建
 
   1. 到[MounRiver官网](http://mounriver.com/)根据操作系统下载最新版`MounRiver Studio`并安装；
-  2. ~~既然是中文手册就把修改语言为中文加上吧>_<~~点击HELP-->Languange-->Sampifiled Chinese-->YES修改语言为中文；
-  3. 点击文件-->新建-->创建MounRiver工程，选择芯片为CH32V307VCT6，如下图，
+  2. ~~既然是中文README就把修改语言为中文加上吧~~点击`HELP-->Languange-->Sampifiled Chinese-->YES`修改语言为中文；
+  3. 点击`文件-->新建-->创建MounRiver工程`，选择芯片为`CH32V307VCT6`，如下图，
   ![新建工程](./figures/Create_Project.png)
-  修改工程名并给出工程存储位置后点击确定。~~我看到模板类型了，不使用操作系统就选NoneOS就行。~~
+  修改工程名并给出工程存储位置后点击确定。~~我看到模板类型了，不使用操作系统就选NoneOS就行，后面如果有使用计划再列。~~
 
 - 参考资源
 
@@ -157,4 +157,9 @@
 
 ~~第一个项目当然是从Hello World点亮LED开始。（笑）~~
 
-## 02 按键
+新建工程后，在左侧项目资源管理器点击`<工程名称>-->User-->main.c`~~工程名称是上一步新建工程时候改的，默认是芯片型号~~得到如下界面：
+![代码初始化](./figures/Initial_Code.png)
+
+## 02-按键
+
+## 03-IIC传感器
