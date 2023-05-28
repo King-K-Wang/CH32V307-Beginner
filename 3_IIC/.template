@@ -1,7 +1,7 @@
 Mcu Type=CH32V30x
 Target Path=obj\3_IIC.hex
 Address=0x08000000
-Erase All=false
+Erase All=true
 Program=true
 Verify=true
 Reset=true
